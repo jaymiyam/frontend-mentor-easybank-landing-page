@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Public Sans', sans-serif;
+  font-size: $font-md;
+  font-weight: 300;
+  color: $color-grayish-blue;
+  line-height: 1.3;
+  overflow-x: hidden;
+}
+
+//links
+
+a,
+a:visited {
+  font-size: $font-sm;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+//buttons
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 1.5rem 3rem;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, $color-lime-green, $color-bright-cyan);
+  color: $color-white;
+  font-weight: 500;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    filter: brightness(110%);
+  }
+}
+
+//overlay
+
+.overlay {
+  // visibility: hidden;
+  // opacity: 0;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: linear-gradient(to bottom, $color-dark-blue, transparent);
+}
+
+//responsive visibility
+
+.header[data-mobile-visibility='true'] {
+  & ~ .overlay {
+    animation: fade-in 0.2s ease-in forwards;
+  }
+
+  & .header__mobile-menu {
+    animation: fade-in 0.2s ease-in forwards;
+  }
+}
+
+.header[data-mobile-visibility='false'] {
+  & ~ .overlay {
+    animation: fade-out 0.2s ease-out forwards;
+  }
+
+  & .header__mobile-menu {
+    animation: fade-out 0.2s ease-out forwards;
+  }
+}
+
+[data-desktop-only] {
+  @include media-query-breakpoint-down(medium) {
+    display: none !important;
+  }
+}
+
+[data-mobile-only] {
+  @include media-query-breakpoint-up(large) {
+    display: none !important;
+  }
+}

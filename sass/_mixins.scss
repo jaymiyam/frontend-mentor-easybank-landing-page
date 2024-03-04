@@ -1,0 +1,25 @@
+// 640px, 980px, 1440px, ems are based on 16px!!
+$breakpoints-up: (
+  'medium': '40em',
+  'large': '61.25em',
+  'xlarge': '87.5em',
+);
+
+//639px, 979px, 1439px
+$breakpoints-down: (
+  'small': '39.9375em',
+  'medium': '61.1875em',
+  'large': '87.4375em',
+);
+
+@mixin media-query-breakpoint-up($size) {
+  @media only screen and (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin media-query-breakpoint-down($size) {
+  @media only screen and (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}

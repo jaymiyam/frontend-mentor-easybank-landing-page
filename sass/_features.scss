@@ -1,0 +1,35 @@
+.features {
+  background-color: $color-light-grayish-blue;
+  text-align: center;
+
+  @include media-query-breakpoint-up(large) {
+    text-align: left;
+  }
+
+  &__intro {
+    padding: 2rem;
+
+    @include media-query-breakpoint-up(large) {
+      max-width: 60%;
+    }
+  }
+
+  &__cont {
+    @include media-query-breakpoint-up(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    padding: 2rem;
+
+    @include media-query-breakpoint-up(medium) {
+      flex: 0 0 50%;
+    }
+
+    @include media-query-breakpoint-up(large) {
+      flex: 1;
+    }
+  }
+}

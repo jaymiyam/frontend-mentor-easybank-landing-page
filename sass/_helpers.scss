@@ -1,0 +1,42 @@
+.container {
+  max-width: 111rem;
+  margin: 0 auto;
+
+  &--pall {
+    padding: 6.5rem 2.4rem;
+  }
+
+  &--py {
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+  }
+
+  &--px {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+}
+
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+.mb-sm {
+  margin-bottom: 1.8rem;
+}
+
+.mb-md {
+  margin-bottom: 3rem;
+}
